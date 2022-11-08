@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Footer, Navbar } from ".";
 
 interface IAppProps {
 }
@@ -6,7 +7,9 @@ interface IAppProps {
 const App: FC<IAppProps> = (children) => {
     return (
         <>
+            <Navbar />
             {children}
+            <Footer />
         </>
   );
 };
