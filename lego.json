@@ -2,23 +2,49 @@
   "blocks": [
     {
       "type": "component",
-      "path": "src/components",
-      "files": ["JSX", "CSS", "TEST"]
+      "path": "./components",
+      "isFile": true,
+      "file": "TSX"
+    },{
+      "type": "util",
+      "path": "./components/util",
+      "isFile": true,
+      "file": "TSX"
+    },
+    {
+      "type": "icon",
+      "path": "./components/icons",
+      "isFile": true,
+      "file": "ICON"
     },
     {
       "type": "page",
-      "path": "src/pages",
-      "files": ["JSX", "CSS", "TEST"]
+      "path": "pages",
+      "isFile": true,
+      "file": "TSXPAGE"
+    },
+    {
+      "type": "slug",
+      "path": "pages",
+      "isFile": true,
+      "file": "TSXPAGESLUG"
+    },
+    {
+      "type": "models",
+      "path": "./models",
+      "files": [
+        "TS"
+      ]
     },
     {
       "type": "reducer",
-      "path": "src/redux/reducers",
+      "path": "utils/services",
       "isFile": true,
       "file": "REDUCER"
     },
     {
       "type": "action",
-      "path": "src/redux/actions",
+      "path": "utils/actions",
       "isFile": true,
       "file": "ACTION"
     }
@@ -36,6 +62,26 @@
       "name": "<name>.test.js",
       "template": "DEFAULT"
     },
+    "TS": {
+      "name": "<name>.ts",
+      "template": "/Users/mac/Desktop/template/typescript.ts"
+    },
+    "TSX": {
+      "name": "<name>.tsx",
+      "template": "/Users/mac/Desktop/template/component.tsx"
+    },
+    "TSXPAGE": {
+      "name": "<name>.tsx",
+      "template": "/Users/mac/Desktop/template/page.tsx"
+    },
+    "TSXPAGESLUG": {
+      "name": "[<name>].tsx",
+      "template": "/Users/mac/Desktop/template/slugPage.tsx"
+    },
+    "ICON": {
+      "name": "<name>.tsx",
+      "template": "/Users/mac/Desktop/template/icon.tsx"
+    },
     "CSS": {
       "name": "<name>.css"
     },
@@ -48,14 +94,13 @@
     "MODULE_SCSS": {
       "name": "<name>.module.scss"
     },
-    "REDUCER":{
+    "REDUCER": {
       "name": "<name>.jsx",
       "template": "DEFAULT"
     },
-    "ACTION":{
+    "ACTION": {
       "name": "<name>.jsx",
       "template": "DEFAULT"
     }
-  }    
+  }
 }
-    
