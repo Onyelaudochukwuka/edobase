@@ -1,1 +1,1 @@
-export { default as Navlink } from "./Navlink";
+export { default as Navlink } from "./NavLink";
