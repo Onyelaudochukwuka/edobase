@@ -6,6 +6,11 @@
       "isFile": true,
       "file": "TSX"
     },{
+      "type": "atom",
+      "path": "./components/atoms",
+      "isFile": true,
+      "file": "TSX"
+    },{
       "type": "util",
       "path": "./components/util",
       "isFile": true,
