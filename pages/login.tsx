@@ -1,12 +1,13 @@
+import type { NextPage } from 'next'
 
-import type { NextPage } from 'next';
+export interface ILoginProps {
+}
 
-const Login: NextPage = () => {
+const Login: NextPage<ILoginProps> = () => {
   return (
-      <div>
-          Login
-    </div>
-    );
-};
-
+    <section>
+      login
+    </section>
+  );
+}
 export default Login;
