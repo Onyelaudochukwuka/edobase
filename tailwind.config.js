@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         loginHighlight: '#590000',
+        action: '#F7716E'
       }
     },
   },
