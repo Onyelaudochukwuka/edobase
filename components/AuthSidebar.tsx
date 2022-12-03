@@ -8,7 +8,7 @@ export interface IAuthSidebarProps {
 
 const AuthSidebar: FC<IAuthSidebarProps> = ({ className, ...props }) => (
   <section
-    className={`${className} gradient grid place-items-center`}
+    className={`${className} gradient lg:grid hidden place-items-center`}
     {...props}
   >
     <div className="gradient-child w-3/4 h-1/2 p-2 px-6 z-20 flex flex-col gap-8 justify-center">
