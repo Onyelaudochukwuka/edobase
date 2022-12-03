@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.gradient{
-    background-image: linear-gradient(159.15deg, #FFDE4E 0.67%, rgba(245, 65, 61, 0.25) 100%);
+.gradient {
+  background-image: linear-gradient(
+    159.15deg,
+    #ffde4e 0.67%,
+    rgba(245, 65, 61, 0.25) 100%
+  );
+}
+.gradient-child {
+  background: linear-gradient(
+    128.79deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
 }
