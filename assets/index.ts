@@ -1,2 +1,3 @@
 export { default as Home } from './Home.icon';
-export { default as LoginPointer } from './LoginPointer.icon';
+export { default as AuthPointer } from './AuthPointer.icon';
+export { default as AuthBlur } from './AuthBlur.icon';

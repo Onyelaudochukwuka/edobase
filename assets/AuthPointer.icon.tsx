@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import type { IconProps, Props, PropTypes } from '../typescript';
 
-const LoginPointer: FC<PropTypes<Props, IconProps>> = (props) => (
+const AuthPointer: FC<PropTypes<Props, IconProps>> = (props) => (
   <svg
     {...props}
     width="130"
@@ -54,4 +54,4 @@ const LoginPointer: FC<PropTypes<Props, IconProps>> = (props) => (
   </svg>
 );
 
-export default LoginPointer;
+export default AuthPointer;
