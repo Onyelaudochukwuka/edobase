@@ -11,16 +11,17 @@ const AuthSidebar: FC<IAuthSidebarProps> = ({ className, ...props }) => (
     className={`${className} gradient grid place-items-center`}
     {...props}
   >
-    <div className="gradient-child w-3/4 h-1/2 p-2 z-20">
+    <div className="gradient-child w-3/4 h-1/2 p-2 px-6 z-20 flex flex-col gap-8 justify-center">
       <div className="flex items-center">
         <AuthPointer className="w-20" />
         <span className="text-5xl text-white font-black">Edobase</span>
       </div>
-      <p>
+      <p className="w-full font-bold text-white text-3xl">
         Platform for getting the latest
         {' '}
         <span className="text-loginHighlight">information.</span>
       </p>
+      <p className="text-xl text-white">Get the gist as it happens.</p>
     </div>
     <AuthBlur className="absolute bottom-0 left-0" />
   </section>
