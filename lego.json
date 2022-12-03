@@ -18,7 +18,7 @@
     },
     {
       "type": "icon",
-      "path": "./components/icons",
+      "path": "./assets",
       "isFile": true,
       "file": "ICON"
     },
@@ -84,7 +84,7 @@
       "template": "/Users/mac/Desktop/template/slugPage.tsx"
     },
     "ICON": {
-      "name": "<name>.tsx",
+      "name": "<name>.icon.tsx",
       "template": "/Users/mac/Desktop/template/icon.tsx"
     },
     "CSS": {
