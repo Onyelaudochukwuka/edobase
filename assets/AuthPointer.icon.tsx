@@ -5,8 +5,6 @@ import type { IconProps, Props, PropTypes } from '../typescript';
 const AuthPointer: FC<PropTypes<Props, IconProps>> = (props) => (
   <svg
     {...props}
-    width="130"
-    height="138"
     viewBox="0 0 130 138"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
