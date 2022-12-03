@@ -1,4 +1,19 @@
 {
+  "name": "edobase",
+  "description": "This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onyelaudochukwuka/edobase.git"
+  },
+  "keywords": [],
+  "author": "Udochukwuka Onyela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onyelaudochukwuka/edobase/issues"
+  },
+  "homepage": "https://github.com/Onyelaudochukwuka/edobase#readme",
   "private": true,
   "scripts": {
     "dev": "next dev",
