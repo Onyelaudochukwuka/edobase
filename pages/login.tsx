@@ -1,13 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
+import { AuthSidebar } from "../components";
 
-export interface ILoginProps {
-}
-
-const Login: NextPage<ILoginProps> = () => {
-  return (
-    <section>
-      login
-    </section>
-  );
-}
+const Login: NextPage = () => {
+  return <Auth;
+};
 export default Login;
