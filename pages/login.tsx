@@ -10,20 +10,19 @@ const Login: NextPage = () => {
   const [password, setPassword] = useState('');
   return (
     <AuthLayout className="">
-      <div>
+      <div className="flex flex-col gap-6">
         <span className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Hello Again</h1>
           <p className="text-lg font-medium text-action">
             Welcome back! please enter your details
           </p>
         </span>
-        <form className="flex flex-col gap-4 mt-8">
-          <div className="flex flex-col gap-2">
+        <form className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <PlaceholderInput
               {...{
                 type: 'email',
                 placeholder: 'Email',
-                name: 'email',
                 state: email,
                 setState: setEmail,
               }}
@@ -32,27 +31,33 @@ const Login: NextPage = () => {
               {...{
                 type: 'password',
                 placeholder: 'Password',
-                name: 'password',
                 state: password,
                 setState: setPassword,
               }}
             />
           </div>
-          <div>
+          <div className="flex justify-between">
             <div>
-              <label htmlFor="remember">
+              <label htmlFor="remember" className="flex gap-2 cursor-pointer">
                 <input type="checkbox" name="remember" id="remember" />
                 Remember me
               </label>
             </div>
             <Link href="/forgot-password">
-              <span>Forgot password?</span>
+              <span className="text-action">Forgot password</span>
             </Link>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="auth-btn py-4 text-white font-black">
             Login
           </button>
         </form>
+        <p className="text-center font-bold mt-4">
+          Don’t have an account?
+          {' '}
+          <Link href="/signup">
+            <span className="text-action"> Sign up for free</span>
+          </Link>
+        </p>
       </div>
     </AuthLayout>
   );
