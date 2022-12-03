@@ -21,6 +21,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
