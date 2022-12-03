@@ -3,7 +3,6 @@ import React, { Dispatch, FC, SetStateAction } from 'react';
 export interface IPlaceholderInputProps {
   type: string
   placeholder: string
-  name: string
   state: string
   setState: Dispatch<SetStateAction<string>>
 }
@@ -11,7 +10,6 @@ export interface IPlaceholderInputProps {
 const PlaceholderInput: FC<IPlaceholderInputProps> = ({
   type,
   placeholder,
-  name,
   state,
   setState,
   ...props
@@ -21,11 +19,10 @@ const PlaceholderInput: FC<IPlaceholderInputProps> = ({
     {...{
       type,
       placeholder,
-      name,
       value: state,
       onChange: (e) => setState(e.target.value),
     }}
-    className="border-b-2 outline-none focus:outline-none border-action"
+    className="border-b-2 outline-none focus:outline-none border-action/50 focus:border-action/100 transition-colors duration-300 ease-in px-1 py-3"
   />
 );
 
