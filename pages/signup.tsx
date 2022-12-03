@@ -1,12 +1,11 @@
+import React from 'react';
 
 import type { NextPage } from 'next';
 
+import { AuthLayout } from '../components';
+
 const SignUp: NextPage = () => {
-  return (
-      <div>
-          Signup
-    </div>
-    );
+  return <AuthLayout className="">Signup</AuthLayout>;
 };
 
 export default SignUp;
