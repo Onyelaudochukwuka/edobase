@@ -6,5 +6,6 @@
   "trailingComma": "es5",
   "multiline": "auto",
   "bracketSameLine": false,
-  "maxLineLength": 100
+  "maxLineLength": 100,
+  "semi": true
 }
