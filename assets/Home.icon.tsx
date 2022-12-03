@@ -3,7 +3,8 @@ import type { IconProps, Props, PropTypes } from '../typescript';
 
 const Home: FC<PropTypes<Props, IconProps>> = (props) => {
   return (
-    <svg
+      <svg
+          {...props}
       width="60"
       height="60"
       viewBox="0 0 60 60"
