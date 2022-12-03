@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
+
 import type { NextPage } from 'next';
-import { AuthSidebar } from "../components";
+
+import { AuthLayout } from '../components';
 
 const Login: NextPage = () => {
-  return <Auth;
+  const [state, setState] = useState(0);
+  setTimeout(() => setState((prev) => prev + 1), 1000);
+  return <AuthLayout className="">{state}</AuthLayout>;
 };
 export default Login;
