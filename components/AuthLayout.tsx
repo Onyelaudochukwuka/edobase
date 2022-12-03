@@ -16,7 +16,7 @@ const AuthLayout: FC<IAuthLayoutProps> = ({
 }) => (
   <section className="flex min-h-screen">
     <AuthSidebar className="basis-5/12" />
-    <div className={`${className} basis-7/12 p-6 flex flex-col justify-between`} {...props}>
+    <div className={`${className} basis-7/12 py-6 px-12 flex flex-col justify-between`} {...props}>
       <Home />
       {children}
       <div className="flex justify-between">
