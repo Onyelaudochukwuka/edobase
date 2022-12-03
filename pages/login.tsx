@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
-import { AuthLayout } from '../components';
+import { AuthLayout, PlaceholderInput } from '../components';
 
 const Login: NextPage = () => {
-  const [state, setState] = useState(0);
-  setTimeout(() => setState((prev) => prev + 1), 1000);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <AuthLayout className="">
       <div>
@@ -19,17 +19,23 @@ const Login: NextPage = () => {
         </span>
         <form className="flex flex-col gap-4 mt-8">
           <div className="flex flex-col gap-2">
-            <input
-              type="email"
-              name="email"
-              className="border-b-2 outline-none focus:outline-none "
-              placeholder="Email"
+            <PlaceholderInput
+              {...{
+                type: 'email',
+                placeholder: 'Email',
+                name: 'email',
+                state: email,
+                setState: setEmail,
+              }}
             />
-            <input
-              type="password"
-              name="password"
-              className="border-b-2 outline-none focus:outline-none"
-              placeholder="Email"
+            <PlaceholderInput
+              {...{
+                type: 'password',
+                placeholder: 'Password',
+                name: 'password',
+                state: password,
+                setState: setPassword,
+              }}
             />
           </div>
           <div>
