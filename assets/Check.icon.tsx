@@ -23,7 +23,6 @@ const Check: FC<PropTypes<{ state: boolean }, IconProps>> = ({
         initial={{ fill: '#DDDDDD' }}
         animate={{ fill: state ? '#FFDE4E' : '#DDDDDD' }}
         transition={{
-          duration: 0.2,
           delay: 0,
           type: 'spring',
           stiffness: 120,
