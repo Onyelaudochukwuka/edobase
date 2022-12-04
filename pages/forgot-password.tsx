@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
-import { Key } from '../assets';
+import { Arrow, Key } from '../assets';
 import { AuthLayout, PlaceholderInput } from '../components';
 
 const Forgotpassword: NextPage = () => {
@@ -10,10 +11,12 @@ const Forgotpassword: NextPage = () => {
   return (
     <AuthLayout nosidebar className="">
       <div className="flex flex-col gap-6 w-1/2 m-auto items-center">
-        <span className="flex flex-col gap-4 items-center">
+        <span className="flex flex-col gap-8 items-center">
           <Key />
           <h1 className="text-3xl font-bold">Forgot Password</h1>
-          <p>No worries, we’ll send you reset instructions</p>
+          <p className="text-placeholder font-bold text-lg">
+            No worries, we’ll send you reset instructions
+          </p>
         </span>
         <form className="flex flex-col gap-6 w-full">
           <div className="flex flex-col gap-6">
@@ -30,9 +33,14 @@ const Forgotpassword: NextPage = () => {
             Reset Password
           </button>
         </form>
-        <div>
-          <p>Back to Log In</p>
-        </div>
+        <Link href="/login">
+          <div className="flex gap-2 items-center group cursor-pointer">
+            <span className="group-hover:-translate-x-2 transition-transform duration-300 ease-in-out">
+              <Arrow />
+            </span>
+            <p>Back to Log In</p>
+          </div>
+        </Link>
       </div>
     </AuthLayout>
   );
