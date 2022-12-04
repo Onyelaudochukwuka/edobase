@@ -45,7 +45,7 @@ const SignUp: NextPage = () => {
   ];
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (!isEmail(email) || disabled || hasMinimumLength(name, 4)) {
+    if (!isEmail(email) || disabled || !hasMinimumLength(name, 4)) {
       setDisabled(true);
     } else {
       // eslint-disable-next-line no-console
