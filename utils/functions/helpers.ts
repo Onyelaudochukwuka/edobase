@@ -13,3 +13,6 @@ export function hasSpecialCharacter(value: string): boolean {
 export function hasMinimumLength(value: string, length: number): boolean {
   return value.length >= length;
 }
+export function isEmail(value: string): boolean {
+  return value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) !== null;
+}
