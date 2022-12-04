@@ -37,7 +37,7 @@ const Login: NextPage = () => {
               }}
             />
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between lg:text-base text-sm">
             <div>
               <label htmlFor="remember" className="flex gap-2 cursor-pointer">
                 <input
@@ -50,14 +50,16 @@ const Login: NextPage = () => {
               </label>
             </div>
             <Link href="/forgot-password">
-              <span className="text-action font-semibold">Forgot password?</span>
+              <span className="text-action font-semibold">
+                Forgot password?
+              </span>
             </Link>
           </div>
           <button type="submit" className="auth-btn py-4 text-white font-black">
             Login
           </button>
         </form>
-        <p className="text-center font-bold mt-4 text">
+        <p className="text-center font-bold mt-4 lg:text-base text-sm">
           Don’t have an account?
           {' '}
           <Link href="/signup">
