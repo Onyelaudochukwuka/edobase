@@ -30,3 +30,6 @@ body{
     border-radius: 10px;
     @apply shadow-lg hover:shadow-2xl shadow-black/10 transition duration-300 ease-in;
 }
+input{
+  @apply placeholder-placeholder;
+}
