@@ -1,15 +1,38 @@
 import React, { useState } from 'react';
 
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
 import { AuthLayout, PlaceholderInput } from '../components';
-import Link from 'next/link';
+import { hasLowercase, hasMinimumLength, hasNumber, hasSpecialCharacter, hasUppercase } from "../utils";
 
 const SignUp: NextPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const passChecks = [];
+  const [disabled, setDisabled] = useState(true);
+  const passChecks = [
+    {
+      text: 'one lowercase character',
+      state: hasLowercase(password),
+    },
+    {
+      text: 'one uppercase character',
+      state: hasUppercase(password),
+    },
+    {
+      text: 'at least 8 characters',
+      state: hasMinimumLength(password, 8),
+    },
+    {
+      text: 'one number',
+      state: hasNumber(password),
+    },
+    {
+      text: 'one special character',
+      state: hasSpecialCharacter(password),
+    }
+  ];
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
