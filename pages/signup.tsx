@@ -66,14 +66,14 @@ const SignUp: NextPage = () => {
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
-        <div>
+        <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Create an account</h1>
           <p className="text-lg font-medium text-action">
             Enter the fields below to get started
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             <PlaceholderInput
               {...{
                 type: 'text',
