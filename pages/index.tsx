@@ -8,6 +8,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     push('/login')
       .then(() => ({}))
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   });
   return <>Div</>;
