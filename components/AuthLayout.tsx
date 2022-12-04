@@ -40,7 +40,7 @@ const AuthLayout: FC<IAuthLayoutProps> = ({
       <div
         className={`${className} ${
           nosidebar ?? false ? 'basis-full' : 'lg:basis-7/12'
-        } w-full py-6 px-12 flex flex-col justify-between`}
+        } w-full py-6 px-12 flex flex-col justify-between gap-12`}
         {...props}
       >
         <Link href="/">
