@@ -4,7 +4,13 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 
 import { AuthLayout, PlaceholderInput } from '../components';
-import { hasLowercase, hasMinimumLength, hasNumber, hasSpecialCharacter, hasUppercase } from "../utils";
+import {
+  hasLowercase,
+  hasMinimumLength,
+  hasNumber,
+  hasSpecialCharacter,
+  hasUppercase,
+} from '../utils';
 
 const SignUp: NextPage = () => {
   const [name, setName] = useState('');
@@ -31,7 +37,7 @@ const SignUp: NextPage = () => {
     {
       text: 'one special character',
       state: hasSpecialCharacter(password),
-    }
+    },
   ];
   return (
     <AuthLayout className="">
@@ -69,7 +75,15 @@ const SignUp: NextPage = () => {
               }}
             />
           </div>
-          <div></div>
+          <div>
+            {passChecks.map(({ text, state }) => (
+              <p key={text}>
+                {state ? '✅' : '❌'}
+                {' '}
+                {text}
+              </p>
+            ))}
+          </div>
           <button type="submit" className="auth-btn py-4 text-white font-black">
             Sign up
           </button>
