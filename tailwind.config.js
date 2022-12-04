@@ -10,6 +10,7 @@ module.exports = {
         loginHighlight: '#590000',
         action: '#F7716E',
         placeholder: '#6C6969',
+        checked: '#FFDE4E',
       }
     },
   },
