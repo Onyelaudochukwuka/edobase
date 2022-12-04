@@ -45,7 +45,7 @@ const SignUp: NextPage = () => {
   ];
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (!isEmail(email) || disabled || !hasMinimumLength(name, 4)) {
+    if (disabled) {
       setDisabled(true);
     } else {
       // eslint-disable-next-line no-console
@@ -60,9 +60,11 @@ const SignUp: NextPage = () => {
         && hasMinimumLength(password, 8)
         && hasNumber(password)
         && hasSpecialCharacter(password)
+        && isEmail(email)
+        && hasMinimumLength(name, 4)
       ),
     );
-  }, [password]);
+  }, [password, email, name]);
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
