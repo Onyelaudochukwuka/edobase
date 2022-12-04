@@ -59,8 +59,9 @@ const Login: NextPage = () => {
             Login
           </button>
         </form>
-        <p className="text-center font-bold mt-4 lg:text-base text-sm">
-          Don’t have an account?{' '}
+        <p className="text-center font-bold mt-4 lg:text-base text-xs">
+          Don’t have an account?
+          {' '}
           <Link href="/signup">
             <span className="text-action"> Sign up for free</span>
           </Link>
