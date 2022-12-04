@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
+import { Check } from '../assets';
 import { AuthLayout, PlaceholderInput } from '../components';
 import {
   hasLowercase,
@@ -10,6 +12,7 @@ import {
   hasNumber,
   hasSpecialCharacter,
   hasUppercase,
+  isEmail,
 } from '../utils';
 
 const SignUp: NextPage = () => {
@@ -17,6 +20,7 @@ const SignUp: NextPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
+  const { push } = useRouter();
   const passChecks = [
     {
       text: 'one lowercase character',
@@ -39,6 +43,26 @@ const SignUp: NextPage = () => {
       state: hasSpecialCharacter(password),
     },
   ];
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (!isEmail(email) || disabled || hasMinimumLength(name, 4)) {
+      setDisabled(true);
+    } else {
+      // eslint-disable-next-line no-console
+      push('/').then(() => ({})).catch((err) => console.error(err));
+    }
+  };
+  useEffect(() => {
+    setDisabled(
+      !(
+        hasLowercase(password)
+        && hasUppercase(password)
+        && hasMinimumLength(password, 8)
+        && hasNumber(password)
+        && hasSpecialCharacter(password)
+      ),
+    );
+  }, [password]);
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
@@ -48,7 +72,7 @@ const SignUp: NextPage = () => {
             Enter the fields below to get started
           </p>
         </div>
-        <form className="flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-6">
             <PlaceholderInput
               {...{
@@ -75,16 +99,21 @@ const SignUp: NextPage = () => {
               }}
             />
           </div>
-          <div>
+          <div className="grid grid-cols-2 gap-4">
             {passChecks.map(({ text, state }) => (
-              <p key={text}>
-                {state ? '✅' : '❌'}
-                {' '}
-                {text}
-              </p>
+              <div key={text} className="flex gap-2 items-center">
+                <Check state={state} />
+                <span>{text}</span>
+              </div>
             ))}
           </div>
-          <button type="submit" className="auth-btn py-4 text-white font-black">
+          <button
+            type="submit"
+            className={`auth-btn py-4 text-white font-black ${
+              disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+            }`}
+            disabled={disabled}
+          >
             Sign up
           </button>
         </form>
