@@ -14,7 +14,7 @@ const Forgotpassword: NextPage = () => {
         <span className="flex flex-col gap-8 items-center">
           <Key />
           <h1 className="text-3xl font-bold">Forgot Password</h1>
-          <p className="text-placeholder font-bold text-lg">
+          <p className="text-placeholder font-bold lg:text-lg md:text-base text-sm">
             No worries, we’ll send you reset instructions
           </p>
         </span>
