@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import { AuthLayout, PlaceholderInput } from '../components';
 const Login: NextPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const remember = useRef<HTMLInputElement>(null);
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
@@ -39,12 +40,17 @@ const Login: NextPage = () => {
           <div className="flex justify-between">
             <div>
               <label htmlFor="remember" className="flex gap-2 cursor-pointer">
-                <input type="checkbox" name="remember" id="remember" />
+                <input
+                  type="checkbox"
+                  className="accent-checked"
+                  ref={remember}
+                  id="remember"
+                />
                 Remember me
               </label>
             </div>
             <Link href="/forgot-password">
-              <span className="text-action font-semibold accent-action">Forgot password?</span>
+              <span className="text-action font-semibold">Forgot password?</span>
             </Link>
           </div>
           <button type="submit" className="auth-btn py-4 text-white font-black">
