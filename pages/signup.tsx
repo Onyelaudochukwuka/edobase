@@ -68,7 +68,7 @@ const SignUp: NextPage = () => {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Create an account</h1>
-          <p className="text-lg font-medium text-action">
+          <p className="lg:text-lg md:text-base text-sm font-medium text-action">
             Enter the fields below to get started
           </p>
         </div>
@@ -99,9 +99,12 @@ const SignUp: NextPage = () => {
               }}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-2 gap-4">
             {passChecks.map(({ text, state }) => (
-              <div key={text} className="flex gap-2 items-center">
+              <div
+                key={text}
+                className="flex gap-2 items-center lg:text-base md:text-sm text-xs"
+              >
                 <Check state={state} />
                 <span>{text}</span>
               </div>
@@ -117,7 +120,7 @@ const SignUp: NextPage = () => {
             Sign up
           </button>
         </form>
-        <p className="text-center font-bold mt-4">
+        <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
           Already have an account?
           {' '}
           <Link href="/login">

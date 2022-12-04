@@ -14,7 +14,7 @@ const Login: NextPage = () => {
       <div className="flex flex-col gap-6">
         <span className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Hello Again</h1>
-          <p className="lg:text-lg text-base font-medium text-action">
+          <p className="lg:text-lg md:text-base text-sm font-medium text-action">
             Welcome back! please enter your details
           </p>
         </span>
@@ -60,8 +60,7 @@ const Login: NextPage = () => {
           </button>
         </form>
         <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
-          Don’t have an account?
-          {' '}
+          Don’t have an account?{' '}
           <Link href="/signup">
             <span className="text-action"> Sign up for free</span>
           </Link>
