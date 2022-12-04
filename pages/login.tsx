@@ -44,7 +44,7 @@ const Login: NextPage = () => {
               </label>
             </div>
             <Link href="/forgot-password">
-              <span className="text-action">Forgot password</span>
+              <span className="text-action font-semibold accent-action">Forgot password?</span>
             </Link>
           </div>
           <button type="submit" className="auth-btn py-4 text-white font-black">
