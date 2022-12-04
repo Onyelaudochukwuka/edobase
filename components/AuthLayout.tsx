@@ -7,9 +7,9 @@ import { Home } from '../assets';
 import { AuthSidebar } from '.';
 
 export interface IAuthLayoutProps {
-  children: React.ReactNode;
-  className: string;
-  nosidebar?: boolean;
+  children: React.ReactNode
+  className: string
+  nosidebar?: boolean
 }
 
 const AuthLayout: FC<IAuthLayoutProps> = ({
