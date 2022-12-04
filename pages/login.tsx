@@ -37,7 +37,7 @@ const Login: NextPage = () => {
               }}
             />
           </div>
-          <div className="flex justify-between lg:text-base text-sm">
+          <div className="flex justify-between lg:text-base md:text-sm text-xs">
             <div>
               <label htmlFor="remember" className="flex gap-2 cursor-pointer">
                 <input
@@ -59,7 +59,7 @@ const Login: NextPage = () => {
             Login
           </button>
         </form>
-        <p className="text-center font-bold mt-4 lg:text-base text-xs">
+        <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
           Don’t have an account?
           {' '}
           <Link href="/signup">
