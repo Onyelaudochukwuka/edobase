@@ -1,13 +1,7 @@
-import  React, { FC } from 'react';
+import React, { FC } from 'react';
 
-export interface ISidebarProps {
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface ISidebarProps {}
 
-const Sidebar: FC<ISidebarProps> = (props) => {
-  return (
-    <section>
-      Sidebar
-    </section>
-  );
-}
+const Sidebar: FC<ISidebarProps> = () => <section>Sidebar</section>;
 export default Sidebar;

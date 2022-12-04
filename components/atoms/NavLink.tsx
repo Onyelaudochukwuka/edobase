@@ -1,13 +1,8 @@
-import  React, { FC } from 'react';
+import React, { FC } from 'react';
 
-export interface INavLinkProps {
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface INavLinkProps {}
 
-const NavLink: FC<INavLinkProps> = (props) => {
-  return (
-    <section>
-      NavLink
-    </section>
-  );
-}
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const NavLink: FC<INavLinkProps> = (props) => <section>NavLink</section>;
 export default NavLink;

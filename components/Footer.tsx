@@ -1,13 +1,7 @@
-import  React, { FC } from 'react';
+import React, { FC } from 'react';
 
-export interface IFooterProps {
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface IFooterProps {}
 
-const Footer: FC<IFooterProps> = (props) => {
-  return (
-    <section>
-      Footer
-    </section>
-  );
-}
+const Footer: FC<IFooterProps> = () => <section>Footer</section>;
 export default Footer;
