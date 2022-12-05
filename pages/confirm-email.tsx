@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import type { NextPage } from 'next';
-import { AuthLayout, PlaceholderInput } from "../components";
-import Link from "next/link";
 
-const confirmEmail: NextPage = () => {
+import type { NextPage } from 'next';
+
+import { AuthLayout, PlaceholderInput } from '../components';
+
+const ConfirmEmail: NextPage = () => {
   const [email, setEmail] = useState('');
   return (
     <AuthLayout nosidebar className="">
@@ -34,4 +35,4 @@ const confirmEmail: NextPage = () => {
     </AuthLayout>
   );
 };
-export default confirmEmail;
+export default ConfirmEmail;
