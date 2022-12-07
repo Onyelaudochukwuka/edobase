@@ -38,7 +38,7 @@ const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ id }) => {
   );
 };
 ConfirmEmail.getInitialProps = ({ query }) => {
-  const { id } = query;
+  const { id } = query as { id: string };
   return { id };
 };
 export default ConfirmEmail;
