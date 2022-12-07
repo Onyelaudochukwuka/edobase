@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 
 import { AuthLayout, PlaceholderInput } from '../components';
 
-const ConfirmEmail: NextPage = () => {
+const ConfirmEmail: NextPage = ({ id }) => {
   const [email, setEmail] = useState('');
   return (
     <AuthLayout nosidebar className="">
