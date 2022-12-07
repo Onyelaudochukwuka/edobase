@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import type { NextPage } from 'next';
 
 import { AuthLayout, PlaceholderInput } from '../components';
-
-const ConfirmEmail: NextPage = ({ id }) => {
+interface ConfirmEmailProps {
+  id: string;
+}
+const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ id }) => {
   const [email, setEmail] = useState('');
   return (
     <AuthLayout nosidebar className="">
