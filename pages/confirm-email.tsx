@@ -4,9 +4,9 @@ import type { NextPage } from 'next';
 
 import { AuthLayout, PlaceholderInput } from '../components';
 interface ConfirmEmailProps {
-  id: string;
+  key: string;
 }
-const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ id }) => {
+const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ key }) => {
   const [email, setEmail] = useState('');
   return (
     <AuthLayout nosidebar className="">
@@ -38,7 +38,7 @@ const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ id }) => {
   );
 };
 ConfirmEmail.getInitialProps = ({ query }) => {
-  const { id } = query as { id: string };
-  return { id };
+  const { key } = query as { key: string };
+  return { key };
 };
 export default ConfirmEmail;
