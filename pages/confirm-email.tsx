@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import type { NextPage } from 'next';
 
 import { AuthLayout, PlaceholderInput } from '../components';
+
 interface ConfirmEmailProps {
-  key: string;
+  key: string
 }
 const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ key }) => {
   const [email, setEmail] = useState('');
