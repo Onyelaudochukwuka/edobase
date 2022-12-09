@@ -33,6 +33,22 @@ const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ key }) => {
                 setState: setEmail,
               }}
             />
+            <PlaceholderInput
+              {...{
+                type: 'text',
+                placeholder: 'Username',
+                state: userName,
+                setState: setUserName,
+              }}
+            />
+            <PlaceholderInput
+              {...{
+                type: 'text',
+                placeholder: 'LGA',
+                state: lga,
+                setState: setLga,
+              }}
+            />
           </div>
           <button type="submit" className="auth-btn py-4 text-white font-black">
             Reset Password
