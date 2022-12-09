@@ -8,11 +8,11 @@ interface ConfirmEmailProps {
   key: string
 }
 const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ key }) => {
-  const [email, setEmail] = useState('');
-  const [userName, setUserName] = useState('');
-  const [gender, setGender] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [lga, setLga] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [userName, setUserName] = useState<string>('');
+  const [gender, setGender] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<number>(0);
+  const [lga, setLga] = useState<string>('');
   return (
     <AuthLayout nosidebar className="">
       <div className="flex flex-col gap-6 lg:w-1/2 w-full m-auto items-center">
