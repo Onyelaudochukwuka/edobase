@@ -9,6 +9,10 @@ interface ConfirmEmailProps {
 }
 const ConfirmEmail: NextPage<ConfirmEmailProps> = ({ key }) => {
   const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [gender, setGender] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [lga, setLga] = useState('');
   return (
     <AuthLayout nosidebar className="">
       <div className="flex flex-col gap-6 lg:w-1/2 w-full m-auto items-center">
