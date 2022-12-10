@@ -49,7 +49,10 @@ const SignUp: NextPage = () => {
       setDisabled(true);
     } else {
       // eslint-disable-next-line no-console
-      push('/').then(() => ({})).catch((err) => console.error(err));
+      push('/confirm-email/iddd?client_id=123')
+        .then(() => ({}))
+        // eslint-disable-next-line no-console
+        .catch((err) => console.error(err));
     }
   };
   useEffect(() => {
