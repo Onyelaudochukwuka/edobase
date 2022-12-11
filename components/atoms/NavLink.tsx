@@ -13,6 +13,6 @@ const NavLink: FC<INavLinkProps> = ({ to, external, children }) => (
   <Link href={to}>{children}</Link>
 );
 NavLink.defaultProps = {
-    external: false,
+  external: false,
 };
 export default NavLink;
