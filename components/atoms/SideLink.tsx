@@ -1,13 +1,7 @@
-import  React, { FC } from 'react';
+import React, { FC } from 'react';
 
-export interface ISideLinkProps {
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface ISideLinkProps {}
 
-const SideLink: FC<ISideLinkProps> = (props) => {
-  return (
-    <section>
-      SideLink
-    </section>
-  );
-}
+const SideLink: FC<ISideLinkProps> = () => <section>SideLink</section>;
 export default SideLink;
