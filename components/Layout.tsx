@@ -3,10 +3,10 @@ import React, { FC, ReactNode } from 'react';
 import { Footer, Navbar, Sidebar } from '.';
 
 interface IAppProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-const App: FC<IAppProps> = (children) => (
+const App: FC<IAppProps> = ({ children }) => (
   <section className="layout">
     <Navbar className="Navbar" />
     <div>{children}</div>
