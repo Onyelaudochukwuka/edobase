@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Footer, Navbar, Sidebar } from '.';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IAppProps {}
+interface IAppProps {
+  children: ReactNode;
+}
 
 const App: FC<IAppProps> = (children) => (
   <section>
