@@ -6,12 +6,12 @@ import { Footer, Navbar, Sidebar } from '.';
 interface IAppProps {}
 
 const App: FC<IAppProps> = (children) => (
-  <>
+  <section>
     <Navbar />
-    {children}
+    <div>{children}</div>
     <Sidebar />
     <Footer />
-  </>
+  </section>
 );
 
 export default App;
