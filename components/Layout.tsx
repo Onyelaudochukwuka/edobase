@@ -7,7 +7,7 @@ interface IAppProps {
 }
 
 const App: FC<IAppProps> = (children) => (
-  <section>
+  <section className="layout">
     <Navbar />
     <div>{children}</div>
     <Sidebar />
