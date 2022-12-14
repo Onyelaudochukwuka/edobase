@@ -33,3 +33,19 @@ body{
 input{
   @apply placeholder-placeholder;
 }
+.layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "header header" "sidebar main";
+  min-height: 100vh;
+}
+.header{
+  grid-area: header;
+}
+.sidebar{
+  grid-area: sidebar;
+}
+.main{
+  grid-area: main;
+}
