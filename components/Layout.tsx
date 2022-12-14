@@ -8,10 +8,10 @@ interface IAppProps {
 
 const App: FC<IAppProps> = ({ children }) => (
   <section className="layout">
-    <Navbar className="Navbar" />
+    <Navbar className="navbar" />
     <div>{children}</div>
-    <Sidebar className="Sidebar" />
-    <Footer className="Footer" />
+    <Sidebar className="sidebar" />
+    <Footer className="footer" />
   </section>
 );
 
