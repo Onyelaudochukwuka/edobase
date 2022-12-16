@@ -38,7 +38,9 @@ input{
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "header header" 
-                        "main sidebar";
+                        "main sidebar"
+                        "footer footer"
+                        ;
   min-height: 100vh;
 }
 .header{
@@ -50,6 +52,10 @@ input{
 .main{
   grid-area: main;
 }
+.footer{
+  grid-area: footer;
+}
+
 @media (max-width: 768px) {
   .layout{
     grid-template-columns: 1fr;
