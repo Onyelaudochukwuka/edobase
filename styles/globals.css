@@ -37,7 +37,8 @@ input{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "header header" "sidebar main";
+  grid-template-areas: "header header" 
+                        "main sidebar";
   min-height: 100vh;
 }
 .header{
