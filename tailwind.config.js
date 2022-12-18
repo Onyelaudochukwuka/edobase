@@ -11,6 +11,7 @@ module.exports = {
         action: '#F7716E',
         placeholder: '#6C6969',
         primary: '#FFDE4E',
+        basic: '#232323'
       }
     },
   },
