@@ -4,3 +4,4 @@ export { default as AuthBlur } from './AuthBlur.icon';
 export { default as Check } from './Check.icon';
 export { default as Key } from './Key.icon';
 export { default as Arrow } from './Arrow.icon';
+export { default as Search } from './Search.icon';
