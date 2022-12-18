@@ -59,7 +59,8 @@
         }
       }
     ],
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "arrow-body-style": "off"
   },
   "overrides": [
     {
