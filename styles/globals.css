@@ -35,16 +35,16 @@ input{
 }
 .layout{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "header header" 
-                        "main sidebar"
-                        "footer footer"
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "navbar navbar navbar" 
+                        "main main sidebar"
+                        "footer footer footer"
                         ;
   min-height: 100vh;
 }
-.header{
-  grid-area: header;
+.navbar{
+  grid-area: navbar;
 }
 .sidebar{
   grid-area: sidebar;
@@ -60,7 +60,7 @@ input{
   .layout{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "header" "main";
+    grid-template-areas: "navbar" "main";
   }
   .sidebar{
     display: none;
