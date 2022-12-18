@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 export interface ISidebarProps {
-    className?: string;
+  className: string
 }
 
-const Sidebar: FC<ISidebarProps> = () => <aside>Sidebar</aside>;
+const Sidebar: FC<ISidebarProps> = ({ className }) => <aside className={`${className}`}>Sidebar</aside>;
 export default Sidebar;
