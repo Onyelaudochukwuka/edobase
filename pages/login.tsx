@@ -42,7 +42,7 @@ const Login: NextPage = () => {
               <label htmlFor="remember" className="flex gap-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  className="accent-checked"
+                  className="accent-primary"
                   ref={remember}
                   id="remember"
                 />
@@ -60,8 +60,7 @@ const Login: NextPage = () => {
           </button>
         </form>
         <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
-          Don’t have an account?
-          {' '}
+          Don’t have an account?{' '}
           <Link href="/signup">
             <span className="text-action"> Sign up for free</span>
           </Link>
