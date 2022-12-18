@@ -4,12 +4,15 @@ import { Footer, Navbar, Sidebar } from '.';
 
 interface IAppProps {
   children: ReactNode
+  className: string
 }
 
-const App: FC<IAppProps> = ({ children }) => (
+const App: FC<IAppProps> = ({ children, className }) => (
   <section className="layout">
     <Navbar className="navbar" />
-    <div>{children}</div>
+    <main className={`${className} main`}>
+      {children}
+    </main>
     <Sidebar className="sidebar" />
     <Footer className="footer" />
   </section>
