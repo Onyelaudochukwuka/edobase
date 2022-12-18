@@ -2,16 +2,14 @@ import React, { useEffect } from 'react';
 
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { Layout } from '../components';
 
 const Home: NextPage = () => {
-  const { push } = useRouter();
-  useEffect(() => {
-    push('/login')
-      .then(() => ({}))
-      // eslint-disable-next-line no-console
-      .catch((err) => console.error(err));
-  });
-  return <>Div</>;
+  return (
+    <Layout>
+      <div>Details</div>
+    </Layout>
+  );
 };
 
 export default Home;
