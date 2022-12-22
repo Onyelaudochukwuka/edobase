@@ -20,7 +20,7 @@ const HomeCard: FC<IHomeCardProps> = ({
 }) => {
   return (
     <Link href={`/post/${uuid}`}>
-      <div className="flex w-3/4 mx-auto">
+      <div className="flex w-3/4 mx-auto items-center">
         <div className="basis-7/12">
           <Image
             src={image}
@@ -29,8 +29,8 @@ const HomeCard: FC<IHomeCardProps> = ({
             alt={title}
           />
         </div>
-        <div className="flex flex-col">
-          <h3>{title}</h3>
+        <div className="flex flex-col justify-around h-full content-between gap-5">
+          <h3 className="text-3xl font-bold">{title}</h3>
           <span>{topic}</span>
           <div>
             <span>
