@@ -9,16 +9,14 @@ const Home: NextPage = () => {
     <Layout className="">
       {[
         {
-          title: 'title',
-          description: 'description',
-          image:
-            '/image1.png',
+          title: 'Creative Mornings',
+          image: '/image1.png',
           comments: 12,
           topic: 'topic',
           uuid: 'uuid',
         },
       ].map((value) => (
-        <HomeCard {...value} />
+        <HomeCard key={value.uuid} {...value} />
       ))}
     </Layout>
   );
