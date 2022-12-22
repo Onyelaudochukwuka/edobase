@@ -20,15 +20,13 @@ const HomeCard: FC<IHomeCardProps> = ({
   topic,
 }) => {
   return (
-    <div>
-      <div>
+    <div className="flex">
+      <div className="basis-7/12">
         <Image
           src={image}
           width={300}
           height={200}
           alt={title}
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
         />
       </div>
       <div>
