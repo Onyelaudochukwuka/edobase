@@ -12,7 +12,7 @@ const Home: NextPage = () => {
           title: 'title',
           description: 'description',
           image:
-            'https://theconnectedawards.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimages2.3dc3c583.png&w=1920&q=75',
+            '/image1.png',
           comments: 12,
           topic: 'topic',
           uuid: 'uuid',
