@@ -13,6 +13,9 @@ module.exports = {
         primary: '#FFDE4E',
         basic: '#232323',
         gray: '#E9E3E3'
+      },
+      fontSize: {
+        xxs: '8px',
       }
     },
   },
