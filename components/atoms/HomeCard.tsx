@@ -19,7 +19,7 @@ const HomeCard: FC<IHomeCardProps> = ({
   topic,
 }) => {
   return (
-    <div className="flex gap-8 mx-auto items-center bg-white pr-8 rounded-lg overflow-hidden shadow-xl w-11/12 relative">
+    <div className="flex gap-8 mx-auto items-center bg-white pr-8 rounded-lg overflow-hidden shadow-xl w-full relative">
       <div className="relative basis-6/12 lg:scale-100 scale-150">
         <Image
           src={image}
