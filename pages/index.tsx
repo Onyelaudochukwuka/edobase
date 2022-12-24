@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     uuid: 'uuid',
   }));
   return (
-    <Layout className="flex gap-6 py-6 flex-col w-full">
+    <Layout className="flex gap-6 p-6 flex-col w-full">
       {posts.map((value, i) => ((i + 1) % 5 === 0 && i !== 0 ? (
         <>
           <HomeCard key={value.uuid} {...value} />
