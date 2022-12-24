@@ -1,19 +1,43 @@
 import React, { FC } from 'react';
 
+import moment from 'moment';
+
 export interface IPostCardProps {
-  img: string
+  gender: 'M' | 'F'
+  time: number
+  comments: number
+  views: number
   title: string
-  metadata: {
-    comments: number
-  }
 }
 
-const PostCard: FC<IPostCardProps> = ({ img, title, metadata: { comments } }) => {
+const PostCard: FC<IPostCardProps> = ({
+  gender, time, comments, views, title,
+}) => {
   // eslint-disable-next-line no-console
-  console.log(img, comments, title);
   return (
     <div className="flex">
-      PostCard
+      <div>
+        <span>
+          Author:
+          {gender}
+        </span>
+        <span>{moment(time).format('h:mm • MM Do,YYYY')}</span>
+      </div>
+      <p>{title}</p>
+      <div>
+        <span>
+          {comments}
+          {' '}
+          comments
+        </span>
+        <span>
+          {views}
+          views
+        </span>
+        <span>
+          Share
+        </span>
+      </div>
     </div>
   );
 };
