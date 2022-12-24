@@ -10,7 +10,7 @@ export interface ISidebarProps {
 const Sidebar: FC<ISidebarProps> = ({ className }) => {
   const ads = Array.from({ length: 5 }, (_, i) => i);
   return (
-    <div className={`${className} flex flex-col gap-6 m-6 `}>
+    <div className={`${className} flex flex-col gap-6 m-6`}>
       {ads.map((value) => (<Ad key={value} />))}
     </div>
   );
