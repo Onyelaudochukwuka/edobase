@@ -15,16 +15,19 @@ const PostCard: FC<IPostCardProps> = ({
 }) => {
   // eslint-disable-next-line no-console
   return (
-    <div className="flex">
-      <div>
+    <div className="flex bg-white flex-col px-6 py-4 gap-4 w-full rounded-md shadow-xl shadow-black/5">
+      <div className="flex flex-col gap-2">
         <span>
-          Author:
+          Author
+
+          (
           {gender}
+          )
         </span>
-        <span>{moment(time).format('h:mm • MM Do,YYYY')}</span>
+        <span className="text-xs">{moment(time).format('h:mm • MMMM Do,YYYY')}</span>
       </div>
-      <p>{title}</p>
-      <div>
+      <h1 className="text-2xl font-bold">{title}</h1>
+      <div className="flex justify-between text-xs lg:flex-base">
         <span>
           {comments}
           {' '}
@@ -32,6 +35,7 @@ const PostCard: FC<IPostCardProps> = ({
         </span>
         <span>
           {views}
+          {' '}
           views
         </span>
         <span>
