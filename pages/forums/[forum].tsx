@@ -17,6 +17,8 @@ const Forum: NextPage<IForumProps> = ({ forum }) => {
     time: Date.now(),
     title: 'Core 77 Conference',
     views: 10 * i,
+    uuid: `uuid${i}`,
+    author: `author-${i}`,
   }));
   return (
     <Layout className="p-6 w-full">
@@ -25,11 +27,11 @@ const Forum: NextPage<IForumProps> = ({ forum }) => {
         <div className="flex gap-6 py-6 flex-col w-full">
           {posts.map((value, i) => ((i + 1) % 5 === 0 && i !== 0 ? (
             <>
-              <PostCard key={value.comments} {...value} />
+              <PostCard key={value.uuid} {...value} />
               <Ad />
             </>
           ) : (
-            <PostCard key={value.comments} {...value} />
+            <PostCard key={value.uuid} {...value} />
           )))}
         </div>
       </div>
