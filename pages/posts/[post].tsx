@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
 
 import type { NextPage } from 'next';
-import { Layout } from "../../components";
+
+import { Layout } from '../../components';
 
 export interface IPostProps {
   slug: string
