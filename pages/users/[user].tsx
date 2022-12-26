@@ -23,7 +23,7 @@ const User: NextPage<IUserProps> = ({ user }) => {
     author: `author-${i}`,
   }));
   return (
-    <Layout className="flex gap-6 flex-col bg-white mx-auto my-6 w-11/12 p-6 rounded-md shadow-2xl shadow-black/5">
+    <Layout hide className="flex gap-6 flex-col bg-white mx-auto my-6 w-11/12 p-6 rounded-md shadow-2xl shadow-black/5">
       <div className="flex gap-2 items-center">
         <span>
           <Image
