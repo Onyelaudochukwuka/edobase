@@ -2,6 +2,7 @@
 /* eslint-disable no-plusplus */
 import React, { useState } from 'react';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import moment from 'moment';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
@@ -18,6 +19,7 @@ const DynamicComponentWithNoSSR = dynamic(
 const CreatePost: NextPage = () => {
   const [value, setValue] = useState('');
   const [open, setOpen] = useState(false);
+  const { section: Section } = motion;
   // eslint-disable-next-line no-console
   console.log(JSON.stringify(value));
   const [title, setTitle] = useState('');
@@ -60,41 +62,58 @@ const CreatePost: NextPage = () => {
         </div>
       </section>
       {open && (
-        <section className="fixed inset-0 flex items-center justify-center bg-black/20">
-          <div className="bg-white p-4 flex flex-col gap-4 w-10/12">
-            <div
-              className="w-fit ml-auto cursor-pointer"
-              onClick={() => setOpen(false)}
-              onKeyDown={() => setOpen(false)}
-              role="button"
-              tabIndex={0}
-            >
-              <Cancel className="w-6 h-6" />
-            </div>
-            <div className="flex items-center gap-2">
-              <Image
-                src="/image1.png"
-                alt="image"
-                width={25}
-                height={25}
-                className="rounded-full h-[25px]"
-              />
-              <span className="text-sm font-semibold">Author ( M )</span>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h1 className="text-2xl font-bold text-center">{title}</h1>
+        <AnimatePresence>
+          <Section
+            className="fixed inset-0 flex items-center justify-center bg-black/20"
+            initial={{
+              opacity: 0, zoom: 0, WebkitMaskSize: '0%', x: 100,
+            }}
+            animate={{
+              opacity: 1, zoom: 1, WebkitMaskSize: '100%', x: 0,
+            }}
+            exit={{ opacity: 0, zoom: 0, x: 0 }}
+            transition={{
+              duration: 1,
+              type: 'spring',
+              stiffness: 120,
+              damping: 20,
+            }}
+          >
+            <div className="bg-white p-4 flex flex-col gap-4 w-10/12">
               <div
-                className="text-sm nest"
-                dangerouslySetInnerHTML={{ __html: value }}
-              />
-              <div>
-                <span className="text-xs font-semibold">
-                  {moment(Date.now()).format('h:mm • MMMM Do,YYYY')}
-                </span>
+                className="w-fit ml-auto cursor-pointer"
+                onClick={() => setOpen(false)}
+                onKeyDown={() => setOpen(false)}
+                role="button"
+                tabIndex={0}
+              >
+                <Cancel className="w-6 h-6" />
+              </div>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/image1.png"
+                  alt="image"
+                  width={25}
+                  height={25}
+                  className="rounded-full h-[25px]"
+                />
+                <span className="text-sm font-semibold">Author ( M )</span>
+              </div>
+              <div className="flex flex-col gap-4">
+                <h1 className="text-2xl font-bold text-center">{title}</h1>
+                <div
+                  className="text-sm nest"
+                  dangerouslySetInnerHTML={{ __html: value }}
+                />
+                <div>
+                  <span className="text-xs font-semibold">
+                    {moment(Date.now()).format('h:mm • MMMM Do,YYYY')}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </Section>
+        </AnimatePresence>
       )}
     </>
   );
