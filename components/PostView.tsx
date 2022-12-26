@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React, { FC } from 'react';
 
 import moment from 'moment';
@@ -38,7 +39,7 @@ const PostView: FC<IPostViewProps> = ({
       </div>
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-center">{title}</h1>
-        <p className="text-sm">{content}</p>
+        <div className="text-sm" dangerouslySetInnerHTML={{ __html: content }} />
         <div>
           <span className="text-xs font-semibold">
             {moment(time).format('h:mm • MMMM Do,YYYY')}
@@ -67,10 +68,18 @@ const PostView: FC<IPostViewProps> = ({
             {' '}
             comments
           </span>
-          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Report</span>
-          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Share</span>
-          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Like</span>
-          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Dislike</span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">
+            Report
+          </span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">
+            Share
+          </span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">
+            Like
+          </span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">
+            Dislike
+          </span>
         </div>
       </div>
     </section>
