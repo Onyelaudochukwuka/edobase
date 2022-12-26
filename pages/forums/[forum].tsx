@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import type { NextPage } from 'next';
@@ -23,7 +24,7 @@ const Forum: NextPage<IForumProps> = ({ forum }) => {
   return (
     <Layout className="p-6 w-full">
       <div className="flex gap-4 flex-col">
-        <h1 className="text-3xl">{`Forums/${forum}`}</h1>
+        <h1 className="text-3xl">{`Forums/${forum[0].toUpperCase() + forum.substring(1)}`}</h1>
         <div className="flex gap-6 py-6 flex-col w-full">
           {posts.map((value, i) => ((i + 1) % 5 === 0 && i !== 0 ? (
             <>
