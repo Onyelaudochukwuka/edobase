@@ -19,7 +19,7 @@ const PostView: FC<IPostViewProps> = ({
   author, title, content, comments, views, time, likes, dislikes, gender,
 }) => {
   return (
-    <section className="bg-white w-11/12 mx-auto p-6 flex flex-col gap-4">
+    <section className="bg-white w-full p-6 flex flex-col gap-4 rounded-md shadow-2xl shadow-black/5">
       <div className="flex items-center gap-2">
         <Image
           src="/image1.png"
