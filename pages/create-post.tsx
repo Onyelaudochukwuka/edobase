@@ -112,7 +112,7 @@ const CreatePost: NextPage = () => {
               damping: 20,
             }}
           >
-            <div className="bg-white p-4 flex flex-col gap-4 w-10/12">
+            <div className="bg-white p-4 flex flex-col gap-4 lg:w-10/12 w-11/12">
               <div
                 className="w-fit ml-auto cursor-pointer"
                 onClick={() => setOpen(false)}
