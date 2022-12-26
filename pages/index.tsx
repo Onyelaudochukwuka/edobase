@@ -16,10 +16,10 @@ const Home: NextPage = () => {
   return (
     <Layout className="flex gap-6 p-6 flex-col w-full">
       {posts.map((value, i) => ((i + 1) % 5 === 0 && i !== 0 ? (
-        <>
-          <HomeCard key={value.uuid} {...value} />
+        <React.Fragment key={value.uuid}>
+          <HomeCard {...value} />
           <Ad />
-        </>
+        </React.Fragment>
       )
         : (
           <HomeCard key={value.uuid} {...value} />
