@@ -17,12 +17,31 @@ const DynamicComponentWithNoSSR = dynamic(
 );
 
 const CreatePost: NextPage = () => {
+  const { section: Section } = motion;
   const [value, setValue] = useState('');
   const [open, setOpen] = useState(false);
-  const { section: Section } = motion;
-  // eslint-disable-next-line no-console
-  console.log(JSON.stringify(value));
   const [title, setTitle] = useState('');
+  const [topic, setTopic] = useState('Politics');
+  const topics = [
+    'Politics',
+    'Sports',
+    'Buisness',
+    'Religion',
+    'Fashion',
+    'Education',
+    'Real Estate',
+    'Job/Vacancy',
+    'Health',
+    'Entertainment',
+    'Technology',
+    'Lifestyle',
+    'Travel',
+    'Food',
+    'Music',
+    'Art',
+    'Culture',
+    'News',
+  ];
   return (
     <>
       <section className="min-h-screen flex">
@@ -33,7 +52,15 @@ const CreatePost: NextPage = () => {
             </h1>
           </Link>
           <h2 className="text-2xl font-semibold">Create Post</h2>
-          <h3 className="text-lg font-semibold">Topic: Politics</h3>
+          <h3 className="text-lg font-semibold">
+            Topic:
+            {' '}
+            <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+              {topics.map((val) => (
+                <option value={val}>{val}</option>
+              ))}
+            </select>
+          </h3>
           <div>
             <span>Title:</span>
             <input
@@ -66,10 +93,16 @@ const CreatePost: NextPage = () => {
           <Section
             className="fixed inset-0 flex items-center justify-center bg-black/20"
             initial={{
-              opacity: 0, zoom: 0, WebkitMaskSize: '0%', x: 100,
+              opacity: 0,
+              zoom: 0,
+              WebkitMaskSize: '0%',
+              x: 100,
             }}
             animate={{
-              opacity: 1, zoom: 1, WebkitMaskSize: '100%', x: 0,
+              opacity: 1,
+              zoom: 1,
+              WebkitMaskSize: '100%',
+              x: 0,
             }}
             exit={{ opacity: 0, zoom: 0, x: 0 }}
             transition={{
