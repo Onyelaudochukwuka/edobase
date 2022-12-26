@@ -13,14 +13,14 @@ const Sidebar: FC<ISidebarProps> = ({ className }) => {
   const ads = Array.from({ length: 5 }, (_, i) => i);
   return (
     <div className={`${className} flex flex-col gap-6 p-6`}>
-      <button
-        type="button"
-        className="px-6 w-fit py-2 bg-action mx-auto hover:bg-basic text-white rounded-full transition-colors duration-500 ease-in"
-      >
-        <Link href="/create-post">
+      <Link href="/create-post">
+        <button
+          type="button"
+          className="px-6 w-fit py-2 bg-action mx-auto hover:bg-basic text-white rounded-full transition-colors duration-500 ease-in"
+        >
           Create Post
-        </Link>
-      </button>
+        </button>
+      </Link>
       {ads.map((value) => (
         <Ad key={value} />
       ))}
