@@ -66,3 +66,12 @@ input{
     display: none;
   }
 }
+.nest h1,.quill .ql-snow .ql-editor h1 {
+  @apply text-base font-semibold;
+}
+.quill .ql-snow .ql-editor h2, .nest h2 {
+  @apply font-semibold;
+}
+.quill .ql-snow .ql-editor *, .nest * {
+  @apply text-sm;
+}
