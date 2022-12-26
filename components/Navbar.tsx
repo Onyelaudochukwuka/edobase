@@ -16,7 +16,9 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
     <nav
       className={`${className} bg-primary h-fit py-3 flex flex-col gap-4 w-full`}
     >
-      <h1 className="text-center font-bold text-black text-xl">Edobase</h1>
+      <Link href="/">
+        <h1 className="text-center font-bold text-black text-xl">Edobase</h1>
+      </Link>
       <div className="flex justify-between items-center px-12 flex-col lg:flex-row gap-4">
         <label htmlFor="search" className="relative block basis-3/12">
           <input
