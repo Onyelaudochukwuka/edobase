@@ -11,7 +11,7 @@ export interface INavbarProps {
 const links: string[] = ['Trending', 'Recent', 'Topics'];
 const Navbar: FC<INavbarProps> = ({ className }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const linked = ['Politics', 'Sports', 'Buisness', 'Religion', 'Fashion', 'Education', 'Real Estate', 'Job/Vacancy', 'Health', 'Entertainment', 'Technology', 'Lifestyle', 'Travel', 'Food', 'Music', 'Art', 'Culture', 'News'];
+  const topics = ['Politics', 'Sports', 'Buisness', 'Religion', 'Fashion', 'Education', 'Real Estate', 'Job/Vacancy', 'Health', 'Entertainment', 'Technology', 'Lifestyle', 'Travel', 'Food', 'Music', 'Art', 'Culture', 'News'];
   return (
     <nav
       className={`${className} bg-primary h-fit py-3 flex flex-col gap-4 w-full`}
@@ -61,7 +61,7 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
         <h2 className="lg:basis-6/12 font-bold">EDOBASE NIGERIAN FORUMS</h2>
       </div>
       <div className="flex  px-12 flex-wrap gap-6 w-full py-3 justify-around">
-        {linked.map((value) => (
+        {topics.map((value) => (
           <span
             key={value}
             className="after:w-full after:h-1 w-fit after:left-0 relative after:absolute after:-bottom-2 after:bg-basic after:rounded-full after:transition-transform after:duration-200 after:ease-in after:scale-x-0 hover:after:scale-x-100 hover:after:origin-right after:origin-left"
