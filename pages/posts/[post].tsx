@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 
-import { Layout, PostView, Comments } from '../../components';
+import {
+  Layout, PostView, Comments,
+} from '../../components';
 import type { ICommentsProps } from '../../components/Comments';
 import type { IPostViewProps } from '../../components/PostView';
 
 export interface IPostProps {
   slug: string
 }
-
+const DynamicComponentWithNoSSR = dynamic(
+  async () => import('../../components/atoms/CommentEditor'),
+  { ssr: false, loading: () => <p>Loading...</p> },
+);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, react/prop-types
 const Post: NextPage<IPostProps> = ({ slug }) => {
+  const [value, setValue] = useState('');
   const post: IPostViewProps = {
     author: 'string',
     title: 'THIS IS A TITLE',
@@ -36,9 +43,10 @@ const Post: NextPage<IPostProps> = ({ slug }) => {
   return (
     <Layout className="flex gap-6 flex-col mx-auto my-6 w-11/12">
       <PostView {...post} />
-      {
-        comments.map((value) => (<Comments {...value} />))
-      }
+      <DynamicComponentWithNoSSR {...{ value, setValue }} />
+      {comments.map((props) => (
+        <Comments {...props} />
+      ))}
     </Layout>
   );
 };
