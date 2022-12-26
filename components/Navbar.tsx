@@ -31,7 +31,7 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
         </label>
         <div className="flex justify-between basis-3/12 gap-4">
           {links.map((value) => (
-            <Link href={`/${value.toLowerCase()}`} key={value}>
+            <Link href={`/forums/${value.toLowerCase()}`} key={value}>
               <span className="text-base font-semibold">{value}</span>
             </Link>
           ))}
@@ -54,13 +54,19 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
       <div className="flex justify-around font-semibold">
         <p className="basis-2/12" suppressHydrationWarning>
           {' '}
-          <Clock
-            format="h:mm:ssa"
-            className="text-lg font-semibold"
-            ticking
-          />
+          <Clock format="h:mm:ssa" className="text-lg font-semibold" ticking />
         </p>
         <h2 className="lg:basis-6/12 font-bold">EDOBASE NIGERIAN FORUMS</h2>
+      </div>
+      <div className="flex  px-12 flex-wrap gap-6 w-full py-3 justify-around">
+        {linked.map((value) => (
+          <span
+            key={value}
+            className="after:w-full after:h-1 w-fit after:left-0 relative after:absolute after:-bottom-2 after:bg-basic after:rounded-full after:transition-transform after:duration-200 after:ease-in after:scale-x-0 hover:after:scale-x-100 hover:after:origin-right after:origin-left"
+          >
+            <Link href={`/forums/${value.toLowerCase()}`}>{value}</Link>
+          </span>
+        ))}
       </div>
     </nav>
   );
