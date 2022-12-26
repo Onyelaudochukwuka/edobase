@@ -23,7 +23,7 @@ const Post: NextPage<IPostProps> = ({ slug }) => {
     gender: 'M',
   };
   return (
-    <Layout className="">
+    <Layout className="flex gap-6 flex-col mx-auto my-6 w-11/12">
       <PostView {...post} />
     </Layout>
   );
