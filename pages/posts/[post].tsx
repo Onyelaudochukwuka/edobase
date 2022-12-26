@@ -41,7 +41,7 @@ const Post: NextPage<IPostProps> = ({ slug }) => {
   }));
 
   return (
-    <Layout className="flex gap-6 flex-col mx-auto my-6 w-11/12">
+    <Layout hide className="flex gap-6 flex-col mx-auto my-6 w-11/12">
       <PostView {...post} />
       <DynamicComponentWithNoSSR {...{ value, setValue }} />
       {comments.map((props) => (
