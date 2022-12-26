@@ -37,7 +37,7 @@ const PostView: FC<IPostViewProps> = ({
         </span>
       </div>
       <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold text-center">{title}</h1>
+        <h1 className="text-2xl font-bold text-center">{title}</h1>
         <p className="text-sm">{content}</p>
         <div>
           <span className="text-xs font-semibold">
@@ -61,16 +61,16 @@ const PostView: FC<IPostViewProps> = ({
             views
           </span>
         </div>
-        <div className="flex gap-4 text-sm justify-between border-b-2 border-t-2 border-gray py-3">
-          <span>
+        <div className="flex gap-4 lg:text-xs text-xxs justify-between border-b-2 border-t-2 border-gray py-3">
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">
             {comments}
             {' '}
             comments
           </span>
-          <span>Report</span>
-          <span>Share</span>
-          <span>Like</span>
-          <span>Dislike</span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Report</span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Share</span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Like</span>
+          <span className="hover:underline transition-all ease-in duration-500 cursor-pointer">Dislike</span>
         </div>
       </div>
     </section>
