@@ -24,11 +24,11 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
           <input
             type="text"
             id="search"
-            className="bg-black lg:block rounded-xl w-64 h-10 px-4 pl-12 text-base placeholder-white text-white focus:outline-none "
+            className="bg-white lg:block rounded-xl w-64 h-10 px-4 pl-12 text-base placeholder-black text-black focus:outline-none"
             placeholder="Search"
           />
           <span className="absolute inset-y-0 left-1 flex items-center pl-2">
-            <Search className="h-5 w-5" />
+            <Search className="h-5 w-5 fill-black" />
           </span>
         </label>
         <div className="flex justify-between basis-3/12 gap-4">
