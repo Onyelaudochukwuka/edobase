@@ -11,7 +11,26 @@ export interface INavbarProps {
 const links: string[] = ['Trending', 'Recent', 'Topics'];
 const Navbar: FC<INavbarProps> = ({ className }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const topics = ['Politics', 'Sports', 'Buisness', 'Religion', 'Fashion', 'Education', 'Real Estate', 'Job/Vacancy', 'Health', 'Entertainment', 'Technology', 'Lifestyle', 'Travel', 'Food', 'Music', 'Art', 'Culture', 'News'];
+  const topics = [
+    'Politics',
+    'Sports',
+    'Buisness',
+    'Religion',
+    'Fashion',
+    'Education',
+    'Real Estate',
+    'Job/Vacancy',
+    'Health',
+    'Entertainment',
+    'Technology',
+    'Art',
+    'Lifestyle',
+    'Travel',
+    'Food',
+    'Music',
+    'Culture',
+    'News',
+  ];
   return (
     <nav
       className={`${className} bg-primary h-fit py-3 flex flex-col gap-4 w-full`}
@@ -60,7 +79,7 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
         </p>
         <h2 className="lg:basis-6/12 font-bold">EDOBASE NIGERIAN FORUMS</h2>
       </div>
-      <div className="flex  px-12 flex-wrap gap-6 w-full py-3 justify-around">
+      <div className="flex  px-12 flex-wrap gap-6 w-full py-3 justify-between leading-5">
         {topics.map((value) => (
           <span
             key={value}
