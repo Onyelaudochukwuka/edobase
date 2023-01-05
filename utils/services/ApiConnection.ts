@@ -21,6 +21,12 @@ const postRequestWithHeader = (url: string, method: string, headers: any): any =
   headers,
   method,
 });
+interface IComplete {
+  token: string
+  error: boolean
+  message: string
+  userId: string
+}
 const edoBaseApi = createApi({
   reducerPath: 'Api',
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -35,10 +41,16 @@ const edoBaseApi = createApi({
       query: (body: any) => postRequest('/auth/sign-up', 'POST', body),
       invalidatesTags: ['Post'],
     }),
+    postComplete: builder.mutation({
+      query: (body: any) => postRequest('/auth/complete-sign-up', 'POST', body),
+      invalidatesTags: ['Post'],
+      transformResponse: (response: IComplete) => response,
+    }),
   }),
 });
 export const {
   usePostLoginMutation,
   usePostSignUpMutation,
+  usePostCompleteMutation,
 } = edoBaseApi;
 export default edoBaseApi;
