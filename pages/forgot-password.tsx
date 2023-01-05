@@ -26,6 +26,7 @@ const Forgotpassword: NextPage = () => {
                 placeholder: 'Email',
                 state: email,
                 setState: setEmail,
+                inputMode: 'email',
               }}
             />
           </div>
