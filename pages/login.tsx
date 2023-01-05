@@ -26,6 +26,7 @@ const Login: NextPage = () => {
                 placeholder: 'Email',
                 state: email,
                 setState: setEmail,
+                inputMode: 'email',
               }}
             />
             <PlaceholderInput
@@ -34,6 +35,7 @@ const Login: NextPage = () => {
                 placeholder: 'Password',
                 state: password,
                 setState: setPassword,
+                inputMode: 'text',
               }}
             />
           </div>
