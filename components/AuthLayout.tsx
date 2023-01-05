@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { Home } from '../assets';
+import { getWithExpiry } from '../utils';
 
 import { AuthSidebar } from '.';
 
@@ -20,6 +22,15 @@ const AuthLayout: FC<IAuthLayoutProps> = ({
   ...props
 }) => {
   const { section: Section } = motion;
+  const { push } = useRouter();
+  useEffect(() => {
+    if ((getWithExpiry('token') != null)) {
+      push('/')
+        .then(() => ({}))
+        // eslint-disable-next-line no-console
+        .catch((err) => console.error(err));
+    }
+  });
   return (
     <Section
       initial={{ x: -100, opacity: 0 }}
