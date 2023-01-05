@@ -17,19 +17,18 @@ const HomeCard: FC<IHomeCardProps> = ({
   comments,
 }) => {
   return (
-    <div className="flex flex-col gap-2 mx-auto items-center bg-white rounded-lg overflow-hidden shadow-xl w-full relative h-fit">
-      <div className="relative w-full overflow-hidden">
+    <div className="flex gap-8 mx-auto items-center bg-white pr-8 rounded-lg overflow-hidden shadow-xl w-full relative">
+      <div className="relative basis-6/12 overflow-hidden">
         <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          layout="responsive"
+          className="w-full h-full object-cover aspect-video "
         />
       </div>
-      <div className="flex flex-col content-between gap-3 py-3">
+      <div className="flex flex-col justify-around h-full content-between gap-3 basis-6/12 py-3 lg:ml-3 ml-5">
         <Link href={`/posts/${uuid}`}>
-          <h3 className="lg:text-3xl text-base font-bold no-break">
-            {title}
-          </h3>
+          <h3 className="lg:text-3xl text-base font-bold no-break">{title}</h3>
         </Link>
         <div className="flex justify-between items-center lg:text-sm text-xxs">
           <div className="flex gap-2 items-center relative">
@@ -47,7 +46,7 @@ const HomeCard: FC<IHomeCardProps> = ({
         </div>
       </div>
       <div className="absolute right-4 top-6">
-        <div className="w-1 h-1 bg-white rounded-full after:w-1 after:h-1 after:bg-white after:rounded-full before:w-1 before:h-1 before:bg-white before:rounded-full before:absolute after:absolute relative before:-top-2 after:top-2" />
+        <div className="w-1 h-1 bg-gray rounded-full after:w-1 after:h-1 after:bg-gray after:rounded-full before:w-1 before:h-1 before:bg-gray before:rounded-full before:absolute after:absolute relative before:-top-2 after:top-2" />
       </div>
     </div>
   );
