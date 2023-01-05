@@ -1,11 +1,11 @@
+/* eslint-disable no-console */
 import React, { FormEvent, useEffect, useState } from 'react';
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Check } from '../assets';
-import { AuthLayout, PlaceholderInput } from '../components';
+import { AuthLayout, PlaceholderInput, PopUp } from '../components';
 import {
   hasLowercase,
   hasMinimumLength,
@@ -13,6 +13,7 @@ import {
   hasSpecialCharacter,
   hasUppercase,
   isEmail,
+  usePostSignUpMutation,
 } from '../utils';
 
 const SignUp: NextPage = () => {
@@ -20,7 +21,8 @@ const SignUp: NextPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
-  const { push } = useRouter();
+  const [signup] = usePostSignUpMutation();
+  const [show, setShow] = useState(false);
   const passChecks = [
     {
       text: 'one lowercase character',
@@ -48,11 +50,20 @@ const SignUp: NextPage = () => {
     if (disabled) {
       setDisabled(true);
     } else {
-      // eslint-disable-next-line no-console
-      push('/confirm-email/iddd?client_id=123')
-        .then(() => ({}))
-        // eslint-disable-next-line no-console
-        .catch((err) => console.error(err));
+      // // eslint-disable-next-line no-console
+      // push('/confirm-email/iddd?client_id=123')
+      //   .then(() => ({}))
+      //   // eslint-disable-next-line no-console
+      //   .catch((err) => console.error(err));
+      signup({
+        name,
+        email,
+        password,
+      }).then(() => {
+        setShow(true);
+      }).catch((err) => {
+        console.log(err);
+      });
     }
   };
   useEffect(() => {
@@ -69,71 +80,74 @@ const SignUp: NextPage = () => {
     );
   }, [password, email, name]);
   return (
-    <AuthLayout className="">
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl font-bold">Create an account</h1>
-          <p className="lg:text-lg md:text-base text-sm font-medium text-action">
-            Enter the fields below to get started
+    <>
+      <PopUp show={show} />
+      <AuthLayout className="">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-3xl font-bold">Create an account</h1>
+            <p className="lg:text-lg md:text-base text-sm font-medium text-action">
+              Enter the fields below to get started
+            </p>
+          </div>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <PlaceholderInput
+                {...{
+                  type: 'text',
+                  placeholder: 'Full name',
+                  state: name,
+                  setState: setName,
+                }}
+              />
+              <PlaceholderInput
+                {...{
+                  type: 'email',
+                  placeholder: 'Email',
+                  state: email,
+                  setState: setEmail,
+                }}
+              />
+              <PlaceholderInput
+                {...{
+                  type: 'password',
+                  placeholder: 'Password',
+                  state: password,
+                  setState: setPassword,
+                }}
+              />
+            </div>
+            <div className="grid lg:grid-cols-2 gap-4">
+              {passChecks.map(({ text, state }) => (
+                <div
+                  key={text}
+                  className="flex gap-2 items-center lg:text-base md:text-sm text-xs"
+                >
+                  <Check state={state} />
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              type="submit"
+              className={`auth-btn py-4 text-white font-black ${
+                disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+              }`}
+              disabled={disabled}
+            >
+              Sign up
+            </button>
+          </form>
+          <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
+            Already have an account?
+            {' '}
+            <Link href="/login">
+              <span className="text-action"> Login</span>
+            </Link>
           </p>
         </div>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <div className="flex flex-col gap-4">
-            <PlaceholderInput
-              {...{
-                type: 'text',
-                placeholder: 'Full name',
-                state: name,
-                setState: setName,
-              }}
-            />
-            <PlaceholderInput
-              {...{
-                type: 'email',
-                placeholder: 'Email',
-                state: email,
-                setState: setEmail,
-              }}
-            />
-            <PlaceholderInput
-              {...{
-                type: 'password',
-                placeholder: 'Password',
-                state: password,
-                setState: setPassword,
-              }}
-            />
-          </div>
-          <div className="grid lg:grid-cols-2 gap-4">
-            {passChecks.map(({ text, state }) => (
-              <div
-                key={text}
-                className="flex gap-2 items-center lg:text-base md:text-sm text-xs"
-              >
-                <Check state={state} />
-                <span>{text}</span>
-              </div>
-            ))}
-          </div>
-          <button
-            type="submit"
-            className={`auth-btn py-4 text-white font-black ${
-              disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-            }`}
-            disabled={disabled}
-          >
-            Sign up
-          </button>
-        </form>
-        <p className="text-center font-bold mt-4 lg:text-base md:text-sm text-xs">
-          Already have an account?
-          {' '}
-          <Link href="/login">
-            <span className="text-action"> Login</span>
-          </Link>
-        </p>
-      </div>
-    </AuthLayout>
+      </AuthLayout>
+    </>
   );
 };
 

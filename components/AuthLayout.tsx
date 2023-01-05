@@ -30,7 +30,7 @@ const AuthLayout: FC<IAuthLayoutProps> = ({
         stiffness: 120,
         damping: 20,
       }}
-      className="flex min-h-screen"
+      className="flex min-h-screen bg-white"
     >
       <AuthSidebar
         className={`basis-5/12 ${

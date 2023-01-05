@@ -8,3 +8,4 @@ export { default as Comment } from './Comment.icon';
 export { default as Home } from './Home.icon';
 export { default as Key } from './Key.icon';
 export { default as Search } from './Search.icon';
+export { default as Email } from './Email.icon';

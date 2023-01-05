@@ -6,4 +6,5 @@ export { default as Footer } from './Footer';
 export { default as Sidebar } from './Sidebar';
 export { default as PostView } from './PostView';
 export { default as Comments } from './Comments';
+export { default as PopUp } from './PopUp';
 export * from './atoms';
