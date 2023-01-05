@@ -98,6 +98,7 @@ const SignUp: NextPage = () => {
                   placeholder: 'Full name',
                   state: name,
                   setState: setName,
+                  inputMode: 'text',
                 }}
               />
               <PlaceholderInput
@@ -106,6 +107,7 @@ const SignUp: NextPage = () => {
                   placeholder: 'Email',
                   state: email,
                   setState: setEmail,
+                  inputMode: 'email',
                 }}
               />
               <PlaceholderInput
@@ -114,6 +116,7 @@ const SignUp: NextPage = () => {
                   placeholder: 'Password',
                   state: password,
                   setState: setPassword,
+                  inputMode: 'text',
                 }}
               />
             </div>
