@@ -22,14 +22,9 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
     'Job/Vacancy',
     'Health',
     'Entertainment',
-    'Technology',
-    'Art',
-    'Lifestyle',
     'Travel',
-    'Food',
-    'Music',
-    'Culture',
-    'News',
+    'True Confessions',
+    'General',
   ];
   return (
     <nav
@@ -41,7 +36,8 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
       <div className="flex justify-between items-center px-12 flex-col lg:flex-row gap-4">
         <label htmlFor="search" className="relative block basis-3/12">
           <input
-            type="text"
+            type="search"
+            inputMode="search"
             id="search"
             className="bg-white lg:block rounded-xl w-64 h-10 px-4 pl-12 text-base placeholder-black text-black focus:outline-none"
             placeholder="Search"
