@@ -46,11 +46,21 @@ const edoBaseApi = createApi({
       invalidatesTags: ['Post'],
       transformResponse: (response: IComplete) => response,
     }),
+    postForgotPassword: builder.mutation({
+      query: (body: any) => postRequest('/auth/forgot-password', 'POST', body),
+      invalidatesTags: ['Post'],
+    }),
+    postRestPassword: builder.mutation({
+      query: (body: any) => postRequest('/auth/reset-password', 'POST', body),
+      invalidatesTags: ['Post'],
+    }),
   }),
 });
 export const {
   usePostLoginMutation,
   usePostSignUpMutation,
   usePostCompleteMutation,
+  usePostForgotPasswordMutation,
+  usePostRestPasswordMutation,
 } = edoBaseApi;
 export default edoBaseApi;
