@@ -54,18 +54,22 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
           ))}
         </div>
         <div className="flex basis-3/12 justify-between gap-4">
-          <button
-            type="button"
-            className="px-6 py-2 basis-2/5 bg-action hover:bg-basic text-white rounded-full transition-colors duration-500 ease-in"
-          >
-            Register
-          </button>
-          <button
-            type="button"
-            className="px-6 py-2 basis-2/5 bg-basic hover:bg-action text-white rounded-full transition-colors duration-500 ease-in"
-          >
-            Login
-          </button>
+          <Link href="/signup">
+            <button
+              type="button"
+              className="px-6 py-2 basis-2/5 bg-action hover:bg-basic text-white rounded-full transition-colors duration-500 ease-in"
+            >
+              Register
+            </button>
+          </Link>
+          <Link href="/login">
+            <button
+              type="button"
+              className="px-6 py-2 basis-2/5 bg-basic hover:bg-action text-white rounded-full transition-colors duration-500 ease-in"
+            >
+              Login
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex justify-around font-semibold">
