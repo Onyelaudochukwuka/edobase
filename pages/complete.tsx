@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { FormEvent, useEffect, useState } from 'react';
 
+import { useRouter } from 'next/router';
+
 import { AuthLayout, PlaceholderInput } from '../components';
 import { SelectInput } from '../components/atoms';
 import {
@@ -19,6 +21,7 @@ const Complete = ({ query }: ICommonProps): any => {
   const [phone, setPhone] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [complete] = usePostCompleteMutation();
+  const { push } = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (disabled) {
@@ -33,6 +36,7 @@ const Complete = ({ query }: ICommonProps): any => {
       }).unwrap().then((res) => {
         if (res.token) {
           setWithExpiry('token', res.token, 1000 * 60 * 60 * 24 * 30);
+          push('/').then(() => ({})).catch((err) => console.error(err));
         }
       }).catch((err) => {
         console.log(err);
