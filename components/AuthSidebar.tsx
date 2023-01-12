@@ -11,7 +11,7 @@ const AuthSidebar: FC<IAuthSidebarProps> = ({ className, ...props }) => (
     className={`${className} gradient`}
     {...props}
   >
-    <div className="gradient-child w-3/4 h-1/2 p-2 px-6 z-20 flex flex-col gap-8 justify-center">
+    <div className="gradient-child w-3/4 h-max py-6 p-2 px-6 z-20 flex flex-col gap-8 justify-center">
       <div className="flex items-center">
         <AuthPointer className="w-20" />
         <span className="text-5xl text-white font-black">Edobase</span>

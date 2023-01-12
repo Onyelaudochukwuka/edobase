@@ -27,6 +27,10 @@ interface IComplete {
   message: string
   userId: string
 }
+interface IForget {
+  error: boolean
+  message: string
+}
 const edoBaseApi = createApi({
   reducerPath: 'Api',
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -36,6 +40,7 @@ const edoBaseApi = createApi({
     postLogin: builder.mutation({
       query: (body: any) => postRequest('/auth/login', 'POST', body),
       invalidatesTags: ['Post'],
+      transformResponse: (response: IComplete) => response,
     }),
     postSignUp: builder.mutation({
       query: (body: any) => postRequest('/auth/sign-up', 'POST', body),
@@ -49,10 +54,12 @@ const edoBaseApi = createApi({
     postForgotPassword: builder.mutation({
       query: (body: any) => postRequest('/auth/forgot-password', 'POST', body),
       invalidatesTags: ['Post'],
+      transformResponse: (response: IForget) => response,
     }),
     postRestPassword: builder.mutation({
       query: (body: any) => postRequest('/auth/reset-password', 'POST', body),
       invalidatesTags: ['Post'],
+      transformResponse: (response: IForget) => response,
     }),
   }),
 });

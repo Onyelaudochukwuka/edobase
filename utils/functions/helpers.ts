@@ -46,3 +46,6 @@ export function setWithExpiry(key: string, value: string, ttl: number): void {
   };
   localStorage.setItem(key, JSON.stringify(item));
 }
+export function ifCondition<T>(condition: boolean, ifValue: any, elseValue: any): T {
+  return condition ? ifValue : elseValue;
+}

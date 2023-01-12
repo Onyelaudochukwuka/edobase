@@ -11,15 +11,21 @@ import { usePostForgotPasswordMutation } from '../utils';
 const Forgotpassword: NextPage = () => {
   const [email, setEmail] = useState('');
   const [show, setShow] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [forgot] = usePostForgotPasswordMutation();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (email === '') return;
     forgot({ email })
-      .then(() => {
-        setShow(true);
+      .unwrap()
+      .then((res) => {
+        if (res.error) {
+          setError(true);
+        } else {
+          setShow(true);
+        }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err, 'err'));
   };
   return (
     <>
@@ -47,6 +53,13 @@ const Forgotpassword: NextPage = () => {
                   inputMode: 'email',
                 }}
               />
+              {
+                error && (
+                  <p className="text-red-500 text-sm font-bold text-center">
+                    Email not found
+                  </p>
+                )
+              }
             </div>
             <button type="submit" className="auth-btn py-4 text-white font-black">
               Reset Password

@@ -1,14 +1,72 @@
-import React, { useRef, useState } from 'react';
+/* eslint-disable no-console */
+import React, { useState } from 'react';
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { AuthLayout, PlaceholderInput } from '../components';
+import {
+  hasLowercase,
+  hasMinimumLength,
+  hasSpecialCharacter,
+  hasUppercase,
+  isEmail,
+  setWithExpiry,
+  usePostLoginMutation,
+} from '../utils';
 
 const Login: NextPage = () => {
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState('');
-  const remember = useRef<HTMLInputElement>(null);
+  const [passwordError, setPasswordError] = useState(false);
+  const [error, setError] = useState(false);
+  const [login] = usePostLoginMutation();
+  const { push } = useRouter();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (
+      !(
+        isEmail(email)
+        && hasMinimumLength(password, 8)
+        && hasLowercase(password)
+        && hasUppercase(password)
+        && hasSpecialCharacter(password)
+      )
+    ) {
+      if (!isEmail(email)) {
+        setEmailError(true);
+      } else {
+        setPasswordError(true);
+      }
+    } else {
+      setEmailError(false);
+      setPasswordError(false);
+      login({
+        email,
+        password,
+      })
+        .unwrap()
+        .then((res) => {
+          console.log(res);
+          if (res.error) {
+            setError(true);
+          } else {
+            setWithExpiry('token', res.token, 1000 * 60 * 60 * 24 * 7);
+            push('/')
+              .then(() => ({}))
+              .catch((err) => console.error(err));
+          }
+        })
+        .catch((err: any) => {
+          // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+          if (err.data.error) {
+            setError(true);
+          }
+        });
+    }
+  };
   return (
     <AuthLayout className="">
       <div className="flex flex-col gap-6">
@@ -18,7 +76,7 @@ const Login: NextPage = () => {
             Welcome back! please enter your details
           </p>
         </span>
-        <form className="flex flex-col gap-6">
+        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-6">
             <PlaceholderInput
               {...{
@@ -27,6 +85,8 @@ const Login: NextPage = () => {
                 state: email,
                 setState: setEmail,
                 inputMode: 'email',
+                error: emailError,
+                errorMessage: 'Please enter a valid email',
               }}
             />
             <PlaceholderInput
@@ -36,21 +96,20 @@ const Login: NextPage = () => {
                 state: password,
                 setState: setPassword,
                 inputMode: 'text',
+                error: passwordError,
+                errorMessage:
+                  'Password must be alphanumeric containing a symbol, a capital letter and be at least 8 characters long',
               }}
             />
+            {
+              error && (
+                <p className="text-red-500 text-sm font-medium">
+                  Invalid email or password
+                </p>
+              )
+            }
           </div>
-          <div className="flex justify-between lg:text-base md:text-sm text-xs">
-            <div>
-              <label htmlFor="remember" className="flex gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="accent-primary"
-                  ref={remember}
-                  id="remember"
-                />
-                Remember me
-              </label>
-            </div>
+          <div className="float-right ml-auto lg:text-base md:text-sm text-xs">
             <Link href="/forgot-password">
               <span className="text-action font-semibold">
                 Forgot password?
