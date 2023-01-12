@@ -103,7 +103,7 @@ const Login: NextPage = () => {
             />
             {
               error && (
-                <p className="text-red-500 text-sm font-medium">
+                <p className="text-red-500 text-sm font-bold text-center">
                   Invalid email or password
                 </p>
               )
